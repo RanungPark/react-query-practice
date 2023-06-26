@@ -9,8 +9,8 @@ const queryClient = new QueryClient()
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <MainProducts />;
-      <ReactQueryDevtools initialIsOpen={true} />
+      <MainProducts />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
 }
