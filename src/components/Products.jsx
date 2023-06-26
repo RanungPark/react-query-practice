@@ -3,9 +3,9 @@ import { useQuery } from 'react-query';
 
 export default function Products() {
   const [checked, setChecked] = useState(false);
-  const {isLoading, error, data: products} = useQuery(['products'], async () => {
+  const {isLoading, error, data: products} = useQuery(['products', checked], async () => {
     console.log('fetching....');
-    return fetch(`data/products.json`)
+    return fetch(`data/${checked? 'sale_' : ''}products.json`)
     .then((res) => res.json());
   });
   const handleChange = () => setChecked((prev) => !prev);
